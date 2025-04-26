@@ -37,4 +37,3 @@ def first_derivative(x:np.ndarray,
             pass
         i+=1
     return dev
-
