@@ -63,7 +63,7 @@ def interpolation(x:np.ndarray,
     while i<legh-1:
         step=(x[i+1]-x[i])/(sample_dots+1)
         j=x[i]
-        while j<x[i+1]:
+        for p in range(sample_dots+1):
             int_x_list.append(j)
             int_y_list.append(para[4*i]*j**3+para[4*i+1]*j**2+\
                 para[4*i+2]*j+para[4*i+3])
@@ -75,7 +75,7 @@ def interpolation(x:np.ndarray,
     int_x_list=np.array(int_x_list)
     int_y_list=np.array(int_y_list)
     
-    return int_x_list,int_y_list
+    return int_x_list,int_y_list,para
 
 # test code:
 '''
@@ -83,6 +83,6 @@ import matplotlib.pyplot as plt
 a=np.array([1,2,3,4,5,6,7,8,9,11,16])
 b=np.array([1,3,6,10,15,20,17,14,9,4,8])
 plt.scatter(a,b,color='red')
-x,y=interpolation(a,b)
+x,y,_=interpolation(a,b)
 plt.plot(x,y)
 plt.show()'''
