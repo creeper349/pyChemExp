@@ -38,11 +38,3 @@ def first_derivative(x:np.ndarray,
         i+=1
     return dev
 
-import matplotlib.pyplot as plt
-a=np.array([1,2,3,4,5,6,7,8,9,11,16])
-b=np.array([1,4,7,12,15,20,17,14,9,4,8])
-plt.scatter(a,b,color='red')
-x,y,_=interpolation(a,b)
-plt.plot(x,y)
-plt.plot(x,first_derivative(a,b))
-plt.show()
