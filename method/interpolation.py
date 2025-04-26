@@ -42,15 +42,15 @@ def interpolation(x:np.ndarray,
                 
             mat[3*legh-4+i,4*i]=6*x[i]
             mat[3*legh-4+i,4*i+1]=2
-            mat[3*legh-4+i,4*i-4]=-6*x[i-1]
+            mat[3*legh-4+i,4*i-4]=-6*x[i]
             mat[3*legh-4+i,4*i-3]=-2
             sol[3*legh-4+i]=0
             
             mat[2*legh-3+i,4*i]=3*x[i]**2
             mat[2*legh-3+i,4*i+1]=2*x[i]
             mat[2*legh-3+i,4*i+2]=1
-            mat[2*legh-3+i,4*i-4]=-3*x[i-1]**2
-            mat[2*legh-3+i,4*i-3]=-2*x[i-1]
+            mat[2*legh-3+i,4*i-4]=-3*x[i]**2
+            mat[2*legh-3+i,4*i-3]=-2*x[i]
             mat[2*legh-3+i,4*i-2]=-1
             sol[2*legh-3+i]=0
             
@@ -69,7 +69,9 @@ def interpolation(x:np.ndarray,
                 para[4*i+2]*j+para[4*i+3])
             j+=step
         i+=1
-        
+    
+    int_x_list.append(x[-1])
+    int_y_list.append(para[-4]*x[-1]**3+para[-3]*x[-1]**2+para[-2]*x[-1]+para[-1])    
     int_x_list=np.array(int_x_list)
     int_y_list=np.array(int_y_list)
     
