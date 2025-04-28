@@ -77,7 +77,7 @@ def multi_derivative(x:np.ndarray,
     return dev[-1]
 
 # test code:
-
+'''
 import matplotlib.pyplot as plt
 a=np.array([1,2,3,4,5,6,7,8,9,11,16])
 b=np.array([1,3,6,10,15,20,17,14,9,4,8])
@@ -85,4 +85,4 @@ plt.scatter(a,b,color='red')
 x,y,_=interpolation(a,b)
 plt.plot(x,y,color='red')
 plt.plot(x,multi_derivative(x,y,2,False),color='green')
-plt.show()
+plt.show()'''
